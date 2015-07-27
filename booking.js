@@ -25,9 +25,10 @@ function find_by_href(href){
 
 function activate_msk(){
 	var button = MSWidget.gId('booking_button');
-	button.onclick = function(){
+	button.onclick = function(evt){
 		$("#ms-booking-button-container, #ms_booking_widget, #ms_overlay").remove();
 		MSWidget.initSonline();	
+        evt.preventDefault();
 	}
 }
 function activate_ms(ms_id){
@@ -59,6 +60,10 @@ function activate_alm(){
 	button.onclick = undefined;
 }
 
+function activate_srt(){
+    var button = MSWidget.gId('booking_button');
+    button.onclick = undefined;
+}
 
 function flash(){
     var objObject = document.getElementsByTagName("object");
